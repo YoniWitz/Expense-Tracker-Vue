@@ -53,13 +53,13 @@
               <th scope="col">Where</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody v-for="(item,index) in expenses" v-bind:key=index>
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
+              <th scope="row">{{index | addOne}}</th>
+              <td>{{item.amount}}</td>
+              <td>{{item.desc}}</td>
+              <td>{{item.amount}}</td>
+              <td>{{item.where}}</td>
             </tr>
           </tbody>
         </table>
@@ -96,6 +96,17 @@ export default {
       }
       this.expenses.push(expense);
       console.log(this.expenses);
+      this.clearForm();
+    },
+    clearForm(){
+      this.where = '';
+      this.amount = '';
+      this.desc = '';
+    }
+  },
+  filters:{
+    addOne(index){
+      return index + 1;
     }
   }
 };
