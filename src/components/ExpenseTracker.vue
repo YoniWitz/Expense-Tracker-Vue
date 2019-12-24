@@ -1,18 +1,35 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-   <h2>Add a new item:</h2>
-   
+    <h2>Add a new item:</h2>
+    <form>
+      <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+
+        <label for="inputDesc" class="col-1 col-form-label">Description:</label>
+        <div class="col-2">
+          <input
+            type="text"
+            class="form-control"
+            id="inputDesc"
+            placeholder="What did you spend on?"
+          />
+        </div>
+
+        <div class="col-3"></div>
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ExpenseTracker',
+  name: "ExpenseTracker",
   props: {
     msg: String
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
