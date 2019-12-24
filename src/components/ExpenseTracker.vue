@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="expenseTracker">
     <h1>{{ msg }}</h1>
     <br />
     <h2>Add a new item:</h2>
@@ -49,7 +49,7 @@
     </form>
 
     <br>
-    
+
     <div class="form-group row">
       <div class="col-3"></div>
       <div class="col-6">
@@ -90,6 +90,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+table{
+  background-color: white;
+}
 h3 {
   margin: 40px 0 0;
 }
