@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     
-    <ExpenseTracker msg="Welcome to Your Vue.js App"/>
+    <ExpenseTracker msg="Simple expense manager project"/>
   </div>
 </template>
 
