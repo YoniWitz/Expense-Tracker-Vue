@@ -5,8 +5,11 @@
     <form>
       <div class="form-group row">
         <div class="col-3"></div>
-        <div class="col-3"></div>
 
+        <label for="inputDate" class="col-1 col-form-label">Date:</label>
+        <div class="col-2">
+          <input type="date" class="form-control" id="inputDate" placeholder="mm/dd/yyyy" />
+        </div>
         <label for="inputDesc" class="col-1 col-form-label">Description:</label>
         <div class="col-2">
           <input
@@ -16,7 +19,17 @@
             placeholder="What did you spend on?"
           />
         </div>
+          <div class="col-3"></div>
+      </div>
 
+      <div class="form-group row">
+        <div class="col-3"></div>
+        <label for="inputAmount" class="col-1 col-form-label">Amount:</label>
+        <div class="col-2">
+          <input type="number" class="form-control" id="inputAmount" placeholder="How Much?" />
+        </div>
+
+        <div class="col-3"></div>
         <div class="col-3"></div>
       </div>
     </form>
