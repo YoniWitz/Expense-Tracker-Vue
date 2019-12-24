@@ -77,7 +77,8 @@ export default {
       amount:null,
       where:"",
       desc:"",
-      expenses: {}
+      date:null,
+      expenses: []
     };
   },
   props: {
@@ -86,7 +87,15 @@ export default {
 
   methods: {
     addExpense() {
-      console.log("expense added amount: " + this.amount + "where: " + this.where + " description: " + this.desc);
+      //console.log("expense added amount: " + this.amount + "where: " + this.where + " description: " + this.desc);
+      let expense = {
+        amount : this.amount,
+        where : this.where,
+        desc : this.desc,
+       // date = moment(this.date).format('lll');
+      }
+      this.expenses.push(expense);
+      console.log(this.expenses);
     }
   }
 };
