@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <br>
     <h2>Add a new item:</h2>
+    <br>
     <form>
       <div class="form-group row">
         <div class="col-3"></div>
@@ -27,6 +29,11 @@
         <label for="inputAmount" class="col-1 col-form-label">Amount:</label>
         <div class="col-2">
           <input type="number" class="form-control" id="inputAmount" placeholder="How Much?" />
+        </div>
+
+         <label for="inputWhere" class="col-1 col-form-label">Where:</label>
+        <div class="col-2">
+          <input type="text" class="form-control" id="inputWhere" placeholder="Ebay, Moments Cafe etc." />
         </div>
 
         <div class="col-3"></div>
