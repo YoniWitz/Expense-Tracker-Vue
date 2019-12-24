@@ -12,6 +12,7 @@
     "bootstrap-vue": "^2.1.0",
     "core-js": "^3.4.3",
     "jquery": "^3.4.1",
+    "moment": "^2.24.0",
     "popper.js": "^1.16.0",
     "vue": "^2.6.11"
   },
@@ -38,7 +39,7 @@
       "no-unused-components": 0,
       "no-unused-vars": 0,
       "no-console": 0,
-      "no-undef":0
+      "no-undef": 0
     },
     "parserOptions": {
       "parser": "babel-eslint"
