@@ -4,7 +4,7 @@
     <br />
     <h2>Add a new item:</h2>
     <br />
-    <form>
+    <form v-on:submit.prevent="addExpense">
       <div class="form-group row">
         <div class="col-3"></div>
 
@@ -48,7 +48,7 @@
       <button type="submit" class="btn btn-primary my-1">Add Expense</button>
     </form>
 
-    <br>
+    <br />
 
     <div class="form-group row">
       <div class="col-3"></div>
@@ -69,7 +69,7 @@
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
-               <td>@mdo</td>
+              <td>@mdo</td>
             </tr>
           </tbody>
         </table>
@@ -82,15 +82,29 @@
 <script>
 export default {
   name: "ExpenseTracker",
+  data() {
+    return {
+      amount:null,
+      where:"",
+      desc:"",
+      expenses: {}
+    };
+  },
   props: {
     msg: String
+  },
+
+  methods: {
+    addExpense() {
+      console.log("expense added");
+    }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-table{
+table {
   background-color: white;
 }
 h3 {
