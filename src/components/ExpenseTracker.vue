@@ -14,34 +14,24 @@
         </div>
         <label for="inputDesc" class="col-1 col-form-label">Description:</label>
         <div class="col-2">
-          <input
-            type="text"
-            class="form-control"
-            id="inputDesc"
-            placeholder="What did you spend on?"
-          />
+          <input type="text" class="form-control" id="inputDesc" v-model="desc" placeholder="What did you spend on?"/>
         </div>
         <div class="col-3"></div>
       </div>
 
       <div class="form-group row">
         <div class="col-3"></div>
+
         <label for="inputAmount" class="col-1 col-form-label">Amount:</label>
         <div class="col-2">
-          <input type="number" class="form-control" id="inputAmount" placeholder="How Much?" />
+          <input type="number" class="form-control" id="inputAmount" v-model="amount" placeholder="How Much?" />
         </div>
 
         <label for="inputWhere" class="col-1 col-form-label">Where:</label>
         <div class="col-2">
-          <input
-            type="text"
-            class="form-control"
-            id="inputWhere"
-            placeholder="Ebay, Moments Cafe etc."
-          />
+          <input type="text" class="form-control" id="inputWhere" v-model="where" placeholder="Ebay, Moments Cafe etc."/>
         </div>
 
-        <div class="col-3"></div>
         <div class="col-3"></div>
       </div>
       <br />
@@ -96,7 +86,7 @@ export default {
 
   methods: {
     addExpense() {
-      console.log("expense added");
+      console.log("expense added amount: " + this.amount + "where: " + this.where + " description: " + this.desc);
     }
   }
 };
