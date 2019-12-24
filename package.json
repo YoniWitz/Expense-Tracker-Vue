@@ -33,7 +33,13 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-side-effects-in-computed-properties": 0,
+      "no-unused-components": 0,
+      "no-unused-vars": 0,
+      "no-console": 0,
+      "no-undef":0
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
