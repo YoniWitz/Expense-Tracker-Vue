@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    
     <ExpenseTracker msg="Simple expense manager project"/>
   </div>
 </template>
