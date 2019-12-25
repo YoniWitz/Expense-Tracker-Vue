@@ -10,7 +10,7 @@
 
         <label for="inputDate" class="col-1 col-form-label">Date:</label>
         <div class="col-2">
-          <input type="date" class="form-control" id="inputDate" placeholder="mm/dd/yyyy" />
+          <input type="date" v-model="date" class="form-control" id="inputDate" placeholder="mm/dd/yyyy" />
         </div>
         <label for="inputDesc" class="col-1 col-form-label">Description:</label>
         <div class="col-2">
@@ -53,13 +53,13 @@
               <th scope="col">Where</th>
             </tr>
           </thead>
-          <tbody v-for="(item,index) in expenses" v-bind:key=index>
+          <tbody v-for="(expense,index) in expenses" v-bind:key=index>
             <tr>
               <th scope="row">{{index | addOne}}</th>
-              <td>{{item.amount}}</td>
-              <td>{{item.desc}}</td>
-              <td>{{item.amount}}</td>
-              <td>{{item.where}}</td>
+              <td>{{expense.date | momentDate}}</td>
+              <td>{{expense.desc}}</td>
+              <td>{{expense.amount}}</td>
+              <td>{{expense.where}}</td>
             </tr>
           </tbody>
         </table>
@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   name: "ExpenseTracker",
   data() {
@@ -92,7 +93,7 @@ export default {
         amount : this.amount,
         where : this.where,
         desc : this.desc,
-       // date = moment(this.date).format('lll');
+        date : this.date
       }
       this.expenses.push(expense);
       console.log(this.expenses);
@@ -102,12 +103,16 @@ export default {
       this.where = '';
       this.amount = '';
       this.desc = '';
+      this.date = '';
     }
   },
   filters:{
     addOne(index){
       return index + 1;
-    }
+    },
+    momentDate(date){
+        return (moment(date).format('MM DD YYYY'));
+      },
   }
 };
 </script>
@@ -116,19 +121,5 @@ export default {
 <style scoped>
 table {
   background-color: white;
-}
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 </style>
