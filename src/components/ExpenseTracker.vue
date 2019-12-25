@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   name: "ExpenseTracker",
   data() {
@@ -110,7 +111,7 @@ export default {
       return index + 1;
     },
     momentDate(date){
-        return (moment(date).format('lll'));
+        return (moment(date).format('MM DD YYYY'));
       },
   }
 };
