@@ -35,7 +35,7 @@
         <div class="col-3"></div>
       </div>
       <br />
-      <button type="submit" class="btn btn-primary my-1">Add Expense</button>
+      <button type="submit" class="btn btn-primary my-1" v-bind:disabled="!formIsValid">Add Expense</button>
     </form>
 
     <br />
@@ -88,7 +88,7 @@ export default {
 
   methods: {
     addExpense() {
-      //console.log("expense added amount: " + this.amount + "where: " + this.where + " description: " + this.desc);
+      
       let expense = {
         amount : this.amount,
         where : this.where,
@@ -96,7 +96,7 @@ export default {
         date : this.date
       }
       this.expenses.push(expense);
-      console.log(this.expenses);
+      
       this.clearForm();
     },
     clearForm(){
@@ -111,9 +111,14 @@ export default {
       return index + 1;
     },
     momentDate(date){
-        return (moment(date).format('MM DD YYYY'));
+        return (moment(date).format('LL'));
       },
-  }
+  },
+  computed: {
+    formIsValid() {
+      return this.date && this.amount && this.desc && this.where;
+    }
+  },
 };
 </script>
 
