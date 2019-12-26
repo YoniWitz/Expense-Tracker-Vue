@@ -10,11 +10,23 @@
 
         <label for="inputDate" class="col-1 col-form-label">Date:</label>
         <div class="col-2">
-          <input type="date" v-model="date" class="form-control" id="inputDate" placeholder="mm/dd/yyyy" />
+          <input
+            type="date"
+            v-model="date"
+            class="form-control"
+            id="inputDate"
+            placeholder="mm/dd/yyyy"
+          />
         </div>
         <label for="inputDesc" class="col-1 col-form-label">Description:</label>
         <div class="col-2">
-          <input type="text" class="form-control" id="inputDesc" v-model="desc" placeholder="What did you spend on?"/>
+          <input
+            type="text"
+            class="form-control"
+            id="inputDesc"
+            v-model="desc"
+            placeholder="What did you spend on?"
+          />
         </div>
         <div class="col-3"></div>
       </div>
@@ -24,12 +36,24 @@
 
         <label for="inputAmount" class="col-1 col-form-label">Amount:</label>
         <div class="col-2">
-          <input type="number" class="form-control" id="inputAmount" v-model="amount" placeholder="How Much?" />
+          <input
+            type="number"
+            class="form-control"
+            id="inputAmount"
+            v-model="amount"
+            placeholder="How Much?"
+          />
         </div>
 
         <label for="inputWhere" class="col-1 col-form-label">Where:</label>
         <div class="col-2">
-          <input type="text" class="form-control" id="inputWhere" v-model="where" placeholder="Ebay, Moments Cafe etc."/>
+          <input
+            type="text"
+            class="form-control"
+            id="inputWhere"
+            v-model="where"
+            placeholder="Ebay, Moments Cafe etc."
+          />
         </div>
 
         <div class="col-3"></div>
@@ -54,15 +78,22 @@
               <th scope="col">Actions</th>
             </tr>
           </thead>
-          <tbody v-for="(expense,index) in expenses" v-bind:key=index>
+          <tbody v-for="(expense,index) in expenses" v-bind:key="index">
             <tr>
               <th scope="row">{{index | addOne}}</th>
               <td>{{expense.date | momentDate}}</td>
               <td>{{expense.desc}}</td>
               <td>${{expense.amount}}</td>
               <td>{{expense.where}}</td>
-             <td><span class="table-remove"><button type="button" v-on:click="removeExpense(index)"
-                  class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span></td>
+              <td>
+                <span class="table-remove">
+                  <button
+                    type="button"
+                    v-on:click="removeExpense(index)"
+                    class="btn btn-danger btn-rounded btn-sm my-0"
+                  >Remove</button>
+                </span>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -73,16 +104,16 @@
 </template>
 
 <script>
-import moment from 'moment'
+import moment from "moment";
 export default {
   name: "ExpenseTracker",
   data() {
     return {
-      amount:null,
-      where:"",
-      desc:"",
-      date:null,
-      expenses: []
+      amount: null,
+      where: "",
+      desc: "",
+      date: null,
+      expenses: null
     };
   },
   props: {
@@ -90,42 +121,49 @@ export default {
   },
 
   methods: {
-    removeExpense(index) {    this.expenses.splice(index, 1);},
-    addExpense() {     
+    removeExpense(index) {
+      this.expenses.splice(index, 1);
+    },
+    addExpense() {
       let expense = {
-        amount : this.amount,
-        where : this.where,
-        desc : this.desc,
-        date : this.date
-      }
+        amount: this.amount,
+        where: this.where,
+        desc: this.desc,
+        date: this.date
+      };
       this.expenses.push(expense);
-      
+
+      window.localStorage.setItem('expenses', JSON.stringify(this.expenses));
       this.clearForm();
     },
-    clearForm(){
-      this.where = '';
-      this.amount = '';
-      this.desc = '';
-      this.date = '';
+    clearForm() {
+      this.where = "";
+      this.amount = "";
+      this.desc = "";
+      this.date = "";
     }
   },
-  filters:{
-    addOne(index){
-      return (index + 1);
+  filters: {
+    addOne(index) {
+      return index + 1;
     },
-    momentDate(date){
-        return (moment(date).format('LL'));
-      },
+    momentDate(date) {
+      return moment(date).format("LL");
+    }
   },
   computed: {
     formIsValid() {
       return this.date && this.amount && this.desc && this.where;
     }
   },
+  created() {
+    if (typeof Storage !== "undefined") {
+      this.expenses = JSON.parse(window.localStorage.getItem("expenses")) || [];
+    }
+  }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 table {
   background-color: white;
