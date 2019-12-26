@@ -123,6 +123,7 @@ export default {
   methods: {
     removeExpense(index) {
       this.expenses.splice(index, 1);
+      window.localStorage.setItem('expenses', JSON.stringify(this.expenses));
     },
     addExpense() {
       let expense = {
