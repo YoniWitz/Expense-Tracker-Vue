@@ -51,6 +51,7 @@
               <th scope="col">Description</th>
               <th scope="col">Amount</th>
               <th scope="col">Where</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody v-for="(expense,index) in expenses" v-bind:key=index>
@@ -58,8 +59,10 @@
               <th scope="row">{{index | addOne}}</th>
               <td>{{expense.date | momentDate}}</td>
               <td>{{expense.desc}}</td>
-              <td>{{expense.amount}}</td>
+              <td>${{expense.amount}}</td>
               <td>{{expense.where}}</td>
+             <td><span class="table-remove"><button type="button" v-on:click="removeExpense(index)"
+                  class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span></td>
             </tr>
           </tbody>
         </table>
@@ -87,8 +90,8 @@ export default {
   },
 
   methods: {
-    addExpense() {
-      
+    removeExpense(index) {    this.expenses.splice(index, 1);},
+    addExpense() {     
       let expense = {
         amount : this.amount,
         where : this.where,
@@ -108,7 +111,7 @@ export default {
   },
   filters:{
     addOne(index){
-      return index + 1;
+      return (index + 1);
     },
     momentDate(date){
         return (moment(date).format('LL'));
