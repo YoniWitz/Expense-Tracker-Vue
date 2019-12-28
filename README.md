@@ -4,7 +4,7 @@ Lets user keep track of expenses. Written in Vue.js, uses local storage and depl
 
 ## You can use it [here](http://yw-expense-tracker.herokuapp.com/)
 
-<image src="src/assets/expense_tracker_snapshot.bmp">
+<image src="assets/expense_tracker_snapshot.bmp">
 
 ## Summary
 
