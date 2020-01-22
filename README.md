@@ -8,18 +8,18 @@ Lets user keep track of expenses. Written in Vue.js, uses local storage and depl
 
 ## Summary
 
-In this project I created an expense tracker using Vue.js. I also learned how to deploy project to Heroku and use local storage
+I began participating in a 'Software Development Mastermind' mentorship program towards the end of 2019. The purpose of the program is to strengthen and expand my skills as a Full Stack developer. The completed work is showcased on my GitHub and portfolio/personal website.
 
-With the new year approaching, I'd like to expand my profile which describes my programming skills to include wider and diverse capabilities. Ultimately, my goal is to land a job which incorporates these multiple skills. I would also like to demonstrate my abilities and wide knowledge of the craft. 
-Therefore, I have begun revising the site and adding apps to my GitHub repo. 
+This Expense Tracker app is the third project of the series. I learned to use local storage, create SAPs on Vue.js and deploy the app to Heroku.
 
-This is the third project in a series of many more to come where I'll provide recruiters and employers the opportunity to go over my code in a coherent and concise manner. I plan to build a comprehensive website, impress the viewer, enhance my skills and most importantly do what I love most, coding. 
+My ultimate goal is to land a job that incorporates my skills and utilizes my abilities and outgoing personality. So if you enjoyed reviewing my code as much as I did writing it, please find me on one of the links provided below.
 
 ##  Installation Instructions
 
 1. Download Repository
 2. From command line, run 'yarn serve' in root directory
-3. Enjoy!
+3. In browser, redirect to localhost where 'client' is running on (typically: http://localhost:8080/)
+4. Enjoy!
 
 ## Author
 
