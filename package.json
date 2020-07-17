@@ -43,6 +43,10 @@
       "no-console": 0,
       "no-undef": 0
     },
+    "resolutions": {
+      "minimist": "^1.2.3",
+      "kind-of": "^6.0.3"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
