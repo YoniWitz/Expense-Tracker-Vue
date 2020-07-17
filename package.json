@@ -27,6 +27,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10"
   },
+  "resolutions": {
+    "minimist": "^1.2.3",
+    "kind-of": "^6.0.3"
+  },
   "eslintConfig": {
     "root": true,
     "env": {
@@ -42,10 +46,6 @@
       "no-unused-vars": 0,
       "no-console": 0,
       "no-undef": 0
-    },
-    "resolutions": {
-      "minimist": "^1.2.3",
-      "kind-of": "^6.0.3"
     },
     "parserOptions": {
       "parser": "babel-eslint"
